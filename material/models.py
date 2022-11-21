@@ -14,7 +14,7 @@ class Material(models.Model):
     material_descricao = models.CharField(max_length=50)
     material_valor = models.CharField(max_length=50)
     material_quantidade = models.IntegerField()
-    material_data_cadastro = models.DateTimeField(auto_now_add=True)
+    material_data_cadastro = models.DateField(auto_now_add=True)
 
     class Meta:
         managed = True
