@@ -11,7 +11,7 @@ class TipoMaterial(models.Model):
 
 class Material(models.Model):
     material_id = models.AutoField(primary_key=True)
-    tipo_material = models.ForeignKey(TipoMaterial, on_delete=models.SET_NULL, related_name='tipo_material', null=True)
+    material_tipo = models.ForeignKey(TipoMaterial, on_delete=models.SET_NULL, related_name='material_tipo', null=True)
     material_fornecedor = models.ForeignKey(Fornecedor, on_delete=models.SET_NULL,  related_name='material_fornecedor', null=True)
     material_descricao = models.CharField(max_length=50)
     material_valor = models.CharField(max_length=50)
