@@ -1,5 +1,6 @@
 from rest_framework import viewsets
 from material.api.serializers import MaterialSerializer
+from material.api.serializers import TipoMaterialSerializer
 from rest_framework.response import Response
 from material.models import Material
 from material.models import TipoMaterial
@@ -23,5 +24,5 @@ class MaterialViewSet(viewsets.ModelViewSet):
         return Response(material_serializer.data)
 
 class TipoMaterialViewSet(viewsets.ModelViewSet):
-    serializer_class = MaterialSerializer
+    serializer_class = TipoMaterialSerializer
     queryset = TipoMaterial.objects.all()
