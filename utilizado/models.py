@@ -14,7 +14,7 @@ class Utilizado(models.Model):
     utilizado_id = models.AutoField(primary_key=True)
     utilizado_quantidade = models.IntegerField()
     material_id = models.ForeignKey(Material, on_delete=models.SET_NULL, related_name='materialDetalhes', null=True)
-    utilizador_id = models.ForeignKey(Vereador, on_delete=models.SET_NULL, related_name='vereadorDetalhes', null=True)
+    utilizador_id = models.ForeignKey(Vereador, on_delete=models.SET_NULL, related_name='vereadorGastos', null=True)
     destino_id = models.ForeignKey(Destino, on_delete=models.SET_NULL, related_name='destinoDetalhes', null=True)
     utilizado_data = models.DateField(auto_now_add=True)
 

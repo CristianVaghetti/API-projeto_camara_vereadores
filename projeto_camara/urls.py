@@ -14,7 +14,7 @@ route.register(r'fornecedor', FornecedorViewSet, basename='fornecedor')
 route.register(r'material', MaterialViewSet, basename='material')
 route.register(r'utilizar', UtilizadoViewSet, basename='utilizar')
 route.register(r'tipoMaterial', TipoMaterialViewSet, basename='tipoMaterial')
-route.register(r'destino', DestinoViewSet, basename='tipoMaterial')
+route.register(r'destino', DestinoViewSet, basename='destino')
 
 
 urlpatterns = [
