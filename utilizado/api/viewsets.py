@@ -1,7 +1,8 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
+from rest_framework.decorators import action
 from utilizado.models import Utilizado, Destino
-from utilizado.api.serializers import UtilizadoSerializer, DestinoSerializer
+from utilizado.api.serializers import UtilizadoSerializer, DestinoSerializer, DestinoDetalhesSerializer
 from material.models import Material
 
 class UtilizadoViewSet(viewsets.ModelViewSet):
@@ -26,3 +27,11 @@ class UtilizadoViewSet(viewsets.ModelViewSet):
 class DestinoViewSet(viewsets.ModelViewSet):
     serializer_class = DestinoSerializer
     queryset = Destino.objects.all()
+
+    @action(detail=True, methods=['get'])
+    def detalhes(self, request, pk=None, *args, **kwargs):
+        queryset = Destino.objects.filter(pk=pk)
+        self.serializer_class = DestinoDetalhesSerializer
+        serializer = self.get_serializer(queryset, many=True)
+
+        return Response(serializer.data)
