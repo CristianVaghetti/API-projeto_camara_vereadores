@@ -10,3 +10,6 @@ class Vereador(models.Model):
     class Meta:
         managed = True
         db_table = 'vereadores'
+
+    def __str__(self):
+        return self.vereador_nome

@@ -10,3 +10,6 @@ class Fornecedor(models.Model):
     class Meta:
         managed = True
         db_table = 'fornecedores'
+
+    def __str__(self):
+        return self.fornecedor_nome

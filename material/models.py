@@ -9,6 +9,9 @@ class TipoMaterial(models.Model):
         managed = True
         db_table = 'tipos_materiais'
 
+    def __str__(self):
+        return self.tipo_descricao
+
 class Material(models.Model):
     material_id = models.AutoField(primary_key=True)
     material_tipo = models.ForeignKey(TipoMaterial, on_delete=models.SET_NULL, related_name='material_tipo', null=True)
@@ -21,3 +24,6 @@ class Material(models.Model):
     class Meta:
         managed = True
         db_table = 'materiais'
+
+    def __str__(self):
+        return self.material_descricao
